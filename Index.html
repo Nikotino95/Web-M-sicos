@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scherzo Productivity | Premium Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Scherzo Productivity</h1>
+        <p>Maestría en el tiempo, excelencia en la práctica</p>
+    </header>
+
+    <main class="container">
+        
+        <section class="card timer-column">
+            <h2>⏱️ Temporizador</h2>
+            
+            <div id="current-task-container">
+                <small>Fase actual:</small><br>
+                <span id="active-task-name">Esperando lista...</span>
+            </div>
+
+            <div class="timer-settings">
+                <div class="input-box">
+                    <label>Estudio (min)</label>
+                    <input type="number" id="workTime" value="0">
+                </div>
+                <div class="input-box">
+                    <label>Descanso (min)</label>
+                    <input type="number" id="breakTime" value="0">
+                </div>
+            </div>
+
+            <div class="timer-display">
+                <span id="minutes">00</span>:<span id="seconds">00</span>
+            </div>
+
+            <div class="timer-controls">
+                <button id="btnStart" class="btn-primary">Iniciar</button>
+                <button id="btnPause" class="btn-secondary">Pausar</button>
+                <button id="btnReset" class="btn-ghost">Reiniciar</button>
+            </div>
+            
+            <div id="recommendation-card" class="recommendation-box">
+                <h4>💡 Nota Pedagógica:</h4>
+                <p id="recommendation-text">Cargando consejos...</p>
+            </div>
+        </section>
+
+        <section class="card list-column">
+            <h2>🎼 Plan de Estudio</h2>
+            
+            <div class="auto-plan-box">
+                <p style="font-size: 0.85rem; margin-bottom: 8px; font-weight: bold; color: var(--primary);">✨ Crear plan de hoy</p>
+                <div class="input-group">
+                    <input type="number" id="totalTimeAvailable" placeholder="Minutos totales">
+                    <button id="btnGeneratePlan" class="btn-primary">¡Créalo!</button>
+                </div>
+            </div>
+
+            <div class="manual-add">
+                <p style="font-size: 0.85rem; margin-bottom: 8px; font-weight: bold; color: var(--primary);">➕ Añadir Manualmente</p>
+                <div class="input-group">
+                    <input type="text" id="taskInput" placeholder="Ej: Escalas...">
+                    <input type="number" id="taskTimeInput" placeholder="Min" style="width: 80px;">
+                    <button id="btnAdd" class="btn-add">Añadir</button>
+                </div>
+            </div>
+
+            <ul id="taskList" class="task-list"></ul>
+            
+            <div class="total-info">
+                Tiempo Total: <span id="totalPlanned">0</span> min
+            </div>
+        </section>
+    </main>
+
+    <audio id="audioNotificacion" src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg" preload="auto"></audio>
+    <script src="app.js"></script>
+</body>
+</html>
